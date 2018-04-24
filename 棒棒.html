@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #444;
+            transform-origin: 50% 50%;
+            -webkit-perspective: 1000px;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;;
+        }
+        .line{
+            width: 3px;
+            height: 200px;
+            border-radius: 20px;
+            background: #eeeeee;
+            box-shadow: 0 0 5px #f2f2f2;
+            position: relative;
+            margin-left: 300px;
+            margin-top: 200px;
+            transform: rotate(45deg);
+            animation:line 8.5s cubic-bezier(.57,-1.08,.25,.54) infinite forwards;
+        }
+        .line:after{
+            content:"";
+            width: 25px;
+            height:25px;
+            border-radius: 50%;
+            background: rgba(244, 244, 244, 0.5);
+            box-shadow: 0 0 10px #efefef;
+            position: absolute;
+            display: block;
+            left:-12.5px;
+            bottom: -12.5px;
+            z-index: 999;
+            opacity: 0;
+            animation: quan 5s cubic-bezier(.66,.19,0,1) forwards infinite;
+        }
+        @keyframes quan {
+            0%{
+                transform: scale(0);
+                opacity: 0;
+            }
+            20%{
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            50%{
+                transform: scale(0.5);
+                opacity: 0.5;
+            }
+            70%{
+                box-shadow: 0 0 20px #efefef;
+                transform: scale(0.7);
+            }
+            100%{
+               box-shadow: 0 0 10px #efefef;
+                transform: scale(1);
+            }
+        }
+        @keyframes line {
+            0%{
+                transform: translate3d(0,0,70px);
+            }
+            10%{
+                transform: rotateZ(32deg);
+            }
+            35%{
+                transform: rotateX(140deg);
+            }
+            70%{
+                transform: translate3d(500px,50px,-70px);
+            }
+            100%{
+                transform: scale(0) translate3d(0,0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="line"></div>
+</body>
+<script>
+</script>
+</html>
