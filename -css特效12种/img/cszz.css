@@ -1,0 +1,880 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    width: 449px;
+    height: 400px;
+    /*border: 1px solid red;*/
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+/*一*/
+.img{
+    background-image: url("../lanrenzhijia1.jpg");
+    margin-left: -30px;
+    background-size: cover;
+    width: 480px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img{
+    margin-left: 0;
+}
+.warp{
+    background-color: rgba(35, 62, 74, 0.3);
+    width: 450px;
+    height: 400px;
+    margin-left: 30px;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp{
+    background-color: rgba(0, 0, 240, 0);
+    margin-left: -1px;
+}
+.warp>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 260px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp>p{
+    margin-top: 210px;
+    margin-left: 50px;
+}
+.warp>span{
+    color: #a0a0a0;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+}.title:hover .warp>span{
+     margin-left: 50px;
+     opacity: 1;
+ }
+/*二个*/
+.img2{
+    background-image: url("../lanrenzhijia2.jpg");
+    background-size: cover;
+    width: 450px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+}
+.warp2{
+    width: 450px;
+    height: 400px;
+    background-image: -webkit-linear-gradient(white, #464646);
+    opacity: 0;
+    margin-top: 100px;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp2{
+    margin-top:0 ;
+    opacity: 0.4;
+    margin-left: -1px;
+}
+.img2 p{
+    color: #3a3a3a;
+    font-size: 30px;
+    margin-top: 180px;
+    margin-left: 130px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img2 p{
+    margin-top: 130px;
+    margin-left: 130px;
+    color: white;
+}
+.img2 span{
+    color: white;
+    margin-left: 100px;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+    margin-top: 150px;
+    position: absolute;
+}.title:hover .img2 span{
+     margin-left: 100px;;
+     opacity: 1;
+     margin-top: 100px;
+
+ }
+/*第三个*/
+.img3{
+    background-image: url("../lanrenzhijia7.jpg");
+    background-size: cover;
+    width: 450px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.warp3{
+    background-color: rgba(35, 62, 74, 0);
+    width: 450px;
+    height: 400px;
+    /*margin-left: 30px;*/
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp3{
+    background-color: rgba(0, 0, 0, 0.35);
+    margin-left: -1px;
+}
+.warp3>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 280px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp3>p{
+    margin-top: 300px;
+    margin-left: 50px;
+}
+.myborder{
+    border: 5px solid white;
+    margin-top: 400px;
+    width: 449px;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .myborder{
+    margin-top: 390px;
+}
+/*四*/
+.img4{
+    background-image: url("../lanrenzhijia4.jpg");
+    margin-top: -30px;
+    background-size: cover;
+    width: 450px;
+    height: 430px;
+    color: white;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img4{
+    margin-top: 0;
+}
+.warp4{
+
+    width: 450px;
+    height: 400px;
+    background-color: rgba(0, 0, 240, 0);
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp4{
+    background-color: rgba(56, 145, 107, 0.3);
+    margin-left: -1px;
+}
+.warp4>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 150px;
+    margin-left: 100px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp4>p{
+    margin-top: 200px;
+    margin-left: 100px;
+}
+.warp4>span{
+    color: rgba(0, 0, 0);
+    margin-left: 80px;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+}
+.title:hover .warp4>span{
+    /*margin-left: 50px;*/
+    opacity: 1;
+}
+.bor4{
+    border: 1px solid;
+    border-color: rgba(255, 255, 0, 0) transparent rgba(255, 255, 0, 0) transparent ;
+    width:0px ;
+    height: 300px;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 25px;
+    -webkit-transition: all .3s linear;
+}
+.bor5{
+    border: 1px solid;
+    border-color:transparent rgba(255, 255, 0, 0) transparent rgba(156, 156, 156, 0);
+    width:300px ;
+    height: 0px;
+    position: absolute;
+    margin-top: -225px;
+    margin-left: 60px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor4{
+    border-color: rgb(255, 253, 248) transparent rgb(251, 255, 255) transparent ;
+    width:390px ;
+    height: 300px;
+}
+.title:hover .bor5{
+    border-color:transparent rgb(250, 255, 243) transparent rgb(255, 255, 253);
+    width:300px ;
+    height:350px;
+}
+/*五*/
+.img5{
+    background-image: url("../lanrenzhijia14.jpg");
+    background-size: cover;
+    width: 450px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+}
+.img5>p{
+    color: white;
+    font-size: 20px;
+    margin-top: 300px;
+    margin-left: 50px;
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img5>p{
+    margin-top: 200px;
+    margin-left: 50px;
+    opacity: 1;
+}
+.bor55>span{
+    color: #3c4a50;
+    font-size: 30px;
+    margin-top: 200px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+    display: block;
+}
+.title:hover .bor55>span{
+    margin-top: 130px;
+    margin-left: 50px;
+}
+.bor55{
+    background-color: white;
+    margin-top: -10px;
+    width: 449px;
+    height: 70px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor55{
+    margin-top: 130px;
+}
+/*六*/
+.img6{
+    background-image: url("../lanrenzhijia8.jpg");
+    background-size: cover;
+    width: 450px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+}
+.warp6{
+    width: 450px;
+    height: 400px;
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp6{
+    background-color: #764525;
+}
+.img6 p{
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 180px;
+    margin-left: 130px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img6 p{
+    margin-top: 130px;
+    margin-left: 130px;
+    color: white;
+}
+.bor6{
+    border: 1px solid white;
+    width: 390px;
+    height: 340px;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -180px;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor6{
+    -webkit-transform: scale(1);
+}
+.img6 span{
+    color: white;
+    -webkit-transition: all .3s linear;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 50px;
+    -webkit-transform: scale(0);
+}
+.title:hover .img6 span{
+    -webkit-transform: scale(1);
+}
+/*七*/
+.img7{
+    background-image: url("../lanrenzhijia9.jpg");
+    background-size: cover;
+    width: 450px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+}
+.img7>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 80px;
+    margin-left: 150px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img7>p{
+    margin-top: 70px;
+}
+.img7>span{
+    color: #fbf6ff;
+    font-size: 15px;
+    margin-top: 230px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+    display: block;
+    opacity: 0;
+}
+.title:hover .img7>span{
+    margin-top: 200px;
+    margin-left: 50px;
+    opacity: 1;
+}
+.bor7{
+    border: 2px solid white;
+    margin-top: 30px;
+    width: 350px;
+    margin-left: 40px;
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor7{
+    margin-top: 10px;
+    margin-left: 40px;
+    opacity: 1;
+}
+/*八*/
+.img8{
+    background-image: url("../lanrenzhijia10.jpg");
+    background-size: cover;
+    width: 500px;
+    height: 450px;
+    color: white;
+    margin-left: -10px;
+    margin-top: -10px;
+    overflow: hidden;
+    -webkit-transform: scale(1);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img8{
+    -webkit-transform: scale(0.96);
+}
+.warp8{
+    width: 490px;
+    height: 450px;
+    background-color:rgba(122,181,182,0.6);
+    position: absolute;
+}
+.img8 p{
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 180px;
+    margin-left: 130px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img8 p{
+    margin-top: 130px;
+    margin-left: 130px;
+    color: white;
+}
+.bor8{
+    border: 1px solid white;
+    width: 370px;
+    height: 120px;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 30px;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor8{
+    -webkit-transform: scale(1);
+}
+.img8 span{
+    color: white;
+    -webkit-transition: all .3s linear;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 50px;
+    -webkit-transform: scale(0);
+}
+.title:hover .img8 span{
+    -webkit-transform: scale(1);
+}
+/*九*/
+.img9{
+    background-image: url("../lanrenzhijia3.jpg");
+    margin-left: -30px;
+    background-size: cover;
+    width: 480px;
+    height: 400px;
+    color: white;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img9{
+    margin-left: 0;
+}
+.warp9{
+    background-color: rgba(0, 0, 240, 0);
+    width: 450px;
+    height: 400px;
+    margin-left: 30px;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp9{
+    background-color: rgba(35, 62, 74, 0.3);
+    margin-left: -1px;
+}
+.bor9{
+    border: 1px solid white;
+    width: 390px;
+    height: 340px;
+    margin-left: 5px;
+    margin-top: 35px;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor9{
+    margin-left: 30px;
+    opacity: 1;
+}
+.bor9>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 180px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp9>p{
+    margin-top: 210px;
+    margin-left: 50px;
+}
+.bor9>span{
+    color: #ffffff;
+    margin-left: 10px;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+}
+.title:hover .bor9>span{
+    margin-left: 50px;
+    opacity: 1;
+}
+/*10*/
+.img10{
+    background-image: url("../lanrenzhijia6.jpg");
+    margin-top: -30px;
+    background-size: cover;
+    width: 450px;
+    height: 430px;
+    color: white;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.warp10{
+    width: 450px;
+    height: 400px;
+    background-color: rgba(0, 0, 240, 0);
+    position: absolute;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp10{
+    background-color: rgba(124, 75, 7, 0.3);
+    margin-left: -1px;
+}
+.warp10>p{
+    color: white;
+    font-size: 30px;
+    margin-top: 200px;
+    margin-left: 100px;
+    -webkit-transition: all .3s linear;
+}
+.warp10>span{
+    color: rgba(0, 0, 0);
+    margin-left: 80px;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+    margin-top: 50px;
+    display: block;
+}
+.title:hover .warp10>span{
+    margin-top: 10px;
+    opacity: 1;
+}
+.bor10{
+    border: 1px solid;
+    border-color:rgba(255, 255, 0, 0) transparent rgba(156, 156, 156, 0) transparent;
+    width:390px;
+    height: 340px;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 25px;
+    -webkit-transform: scalex(0);
+    -webkit-transition: all .3s linear;
+}
+.bor101{
+    border: 1px solid;
+    border-color:transparent rgba(255, 255, 0, 0) transparent rgba(156, 156, 156, 0);
+    width:390px ;
+    height: 340px;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 25px;
+    -webkit-transform: scaley(0);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor10{
+    border-color: rgb(250, 255, 243) transparent rgb(250, 255, 243) transparent;
+    -webkit-transform: scalex(1);
+}
+.title:hover .bor101{
+    border-color:transparent rgb(250, 255, 243) transparent rgb(255, 255, 253);
+    -webkit-transform: scaley(1);
+}
+/*十一*/
+.img11{
+    background-image: url("../lanrenzhijia5.jpg");
+    background-size: cover;
+    width: 500px;
+    height: 450px;
+    color: white;
+    margin-left: -10px;
+    margin-top: -10px;
+    overflow: hidden;
+    -webkit-transform: scale(1);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img11{
+    -webkit-transform: scale(0.96);
+}
+.warp11{
+    width: 490px;
+    height: 450px;
+    background-color:rgba(122,181,182,0);
+    position: absolute;
+}
+.title:hover .warp11{
+    background-color:rgba(122,181,182,0.6);
+}
+.img11 p{
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 130px;
+    margin-left: 130px;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img11 p{
+    margin-top: 180px;
+    margin-left: 130px;
+    color: white;
+}
+.bor11{
+    border: 1px solid white;
+    width: 370px;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 30px;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor11{
+    -webkit-transform: rotate(45deg);
+}
+.bor111{
+    border: 1px solid white;
+    width: 370px;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 30px;
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor111{
+    -webkit-transform: rotate(-45deg);
+}
+.img11 span{
+    color: white;
+    -webkit-transition: all .3s linear;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 50px;
+    display: block;
+}
+.title:hover .img11 span{
+;margin-top: 30px;
+}
+/*十二*/
+.main{
+    width: 449px;
+    height: 400px;
+    position: relative;
+    float: left;
+}
+.img12{
+    width: 450px;
+    height: 400px;
+    background-image: url("../lanrenzhijia12.jpg");
+    color: white;
+    overflow: hidden;
+    margin-left: 0px;
+}
+.p1{
+    font-size: 30px;
+    margin-left: 80px;
+    margin-top: 50px;
+    position: absolute;
+
+}
+.p2{
+    margin-top: 170px;
+    margin-left: 100px;
+    opacity: 0;
+    -webkit-transition: all 0.3s linear;
+}
+.main:hover .p2{
+    margin-top: 320px;
+    margin-left: 100px;
+    opacity: 1;
+}
+.bor12{
+    border: 5px solid white;
+    width: 340px;
+    height: 160px;
+    position: absolute;
+    margin-left: 50px;
+    top: 30px;
+    -webkit-transition: all 0.3s linear;
+}
+.main:hover .bor12{
+    top: 200px;
+}
+.warp12{
+    width: 450px;
+    height: 400px;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+.main:hover .warp12{
+    opacity: 0.2;
+}
+/*十三*/
+.main13{
+    width: 449px;
+    height: 400px;
+    overflow: hidden;
+    float: left;
+    /*position: relative;*/
+    color: white;
+}
+.img13{
+    background-image: url("../lanrenzhijia13.jpg");
+    width: 500px;
+    height: 400px;
+    margin-left: -20px;
+    position: absolute;
+    overflow: hidden;
+    -webkit-transition: all 0.3s linear;
+}
+.main13:hover .img13{
+    margin-left: 0;
+}
+.warp13{
+    width: 480px;
+    height: 400px;
+    overflow: hidden;
+    background-color: rgba(0, 128, 0, 0.11);
+}
+.main13:hover .warp13{
+    background-color:rgba(0,128,0,0.2)
+}
+.p13>p{
+    font-size: 30px;
+    position: absolute;
+    margin-top:50px;
+    margin-left: 50px;
+}
+.bor13{
+    border: 1px solid white;
+    width: 0;
+    opacity: 0;
+    /*position: absolute;*/
+    margin-top: 100px;
+    margin-left: 50px;
+    -webkit-transition: all .3s linear ;
+}
+.main13:hover .bor13{
+    width: 350px;
+    opacity: 1;
+}
+.p132>p{
+    font-size: 15px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 300px;
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+}
+.main13:hover .p132>p{
+    margin-top: 20px;
+    margin-left: 50px;
+    opacity: 1;
+}
+/*十四*/
+.conten{
+    width: 450px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+.content{
+    width: 500px;
+    height: 480px;
+    background-image: url("../lanrenzhijia15.jpg");
+    overflow: hidden;
+    color: white;
+    background-size: cover;
+    /*background-position: -25px -25px;*/
+    margin-left: -25px;
+    margin-top: -25px;
+    position: absolute;
+    -webkit-transition: all 0.3s linear;
+}
+.content:hover{
+    width: 500px;
+    height: 460px;
+    -webkit-transform:scale(0.9,0.9);
+
+}
+.contentm{
+    width: 550px;
+    height: 480px;
+    background-color:skyblue;
+    opacity: 0;
+    position: absolute;
+}
+.content:hover .contentm{
+    opacity: 0.7;
+    position: absolute;
+    width: 550px;
+    height: 480px;
+}
+.content1{
+    width: 400px;
+    height: 300px;
+    border: 1px solid white;
+    margin-left:40px;
+    margin-top: 85px;
+    position: absolute;
+    opacity:0;
+    -webkit-transition: all 0.3s linear;}
+.conten:hover .content1{
+    opacity: 1;
+    position: absolute;
+}
+.text{
+    font-size: 25px;
+    margin-top: 120px;
+    margin-left: 150px;
+    position: absolute;}
+span{font-weight: bold}
+.text2{
+    margin-left: 100px;
+    margin-top: 180px;
+}
+/*十五*/
+.img15{
+    background-image: url("../lanrenzhijia11.jpg");
+    background-size: cover;
+    width: 500px;
+    height: 460px;
+    margin-left: -10px;
+    margin-top: -25px;
+    color: white;
+    overflow: hidden;
+    -webkit-transform: scale(1,1);
+    -webkit-transition: all .3s linear;
+}
+.title:hover .img15{
+    -webkit-transform: scale(0.96,0.9);
+}
+.warp15{
+    background-color: rgba(0, 0, 240, 0);
+    width: 490px;
+    height: 450px;
+    margin-left: 30px;
+    /*position: absolute;*/
+    overflow: hidden;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .warp15{
+    background-color: rgba(35, 62, 74, 0.3);
+    margin-left: -1px;
+}
+.bor15{
+    border: 1px solid white;
+    /*width: 390px;*/
+    height: 40px;
+    margin-left: 5px;
+    margin-top: 35px;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all .3s linear;
+}
+.title:hover .bor15{
+    margin-left: 250px;
+    opacity: 1;
+}
+.title>p{
+    color: white;
+    font-size: 30px;
+    margin-top: -120px;
+    margin-left: 150px;
+    position: absolute;
+}
+.warp15>span{
+    color: #ffffff;
+    margin-left: -100px;
+    margin-top: 50px;
+    position: absolute;
+    -webkit-transition: all .3s linear;
+    opacity: 0;
+}
+.title:hover .warp15>span{
+    margin-left: 50px;
+    opacity: 1;
+}
