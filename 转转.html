@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>沿着路径的动画</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei";
+            box-sizing: border-box;
+        }
+        #path{
+            width: 500px;
+            height: 500px;
+            background: rgba(217, 89, 78, 0.8);
+            border-radius: 50%;
+            margin: 200px auto;
+        }
+        #rotate{
+            width: 50px;
+            height:50px;
+            border-radius: 50%;
+            background: rgba(51, 153, 102, 0.8);
+            padding: 10px;
+            color:#FFF;
+            text-shadow: 0 0 1px rgba(255,255,255,.5);
+            margin: 0  auto;
+            animation: animate 2s  cubic-bezier(.9,.25,.08,.83) infinite;
+            transform-origin: 50% 200px;
+            line-height: 50px;
+        }
+        @keyframes animate {
+            to{
+                transform: rotate(1turn);
+            }
+        }
+        @keyframes animate2 {
+            to{
+                transform: translateX(500px);
+            }
+        }
+        #box{
+            width: 100px;
+            height: 30px;
+            background: rgba(51, 153, 102, 0.8);
+            margin-top: 30px;
+            border-radius: 10%;
+            animation: animate2 1s cubic-bezier(.9,.25,.52,.5) forwards;
+        }
+    </style>
+</head>
+<body>
+<div id="path">
+    &nbsp;
+    <div id="rotate">duuliy</div>
+</div>
+
+<div id="box">
+    贝塞尔曲线
+</div>
+</body>
+</html>
