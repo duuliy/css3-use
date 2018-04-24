@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css星星打分</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei";
+            text-align: center;
+            padding-top: 200px;
+        }
+        .star input{
+            margin-right:20px;
+            color:rgb(255, 0, 0);
+            border:none;
+            outline: none;
+            cursor: pointer;
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            opacity: 0;
+            margin-top: 20px;
+        }
+        .star span{
+            display: inline-block;
+            font-size: 65px;
+            margin-right:20px;
+            color:rgb(255, 0, 0);
+            transition:color 0.2s cubic-bezier(.28,-0.67,.45,.59);
+        }
+        .star input:checked~span{
+            color:#ccc;
+        }
+        .star input:checked+span{
+            color:rgb(255, 0, 0);
+            text-shadow: rgba(0,0,0,0.5);
+        }
+        .star input:checked .star~div:before{
+            content:"11"
+        }
+    </style>
+</head>
+<body>
+<div class="star">
+    <input type="radio" name="a">
+    <span>★</span>
+    <input type="radio" name="a">
+    <span>★</span>
+    <input type="radio" name="a">
+    <span>★</span>
+    <input type="radio" name="a">
+    <span>★</span>
+    <input type="radio" name="a">
+    <span>★</span>
+</div>
+</body>
+<script>
+</script>
+</html>
