@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            perspective: 1000px;
+        }
+        body,html{
+            width:100%;
+            height:100%
+        }
+        .root{
+            transform-style:preserve-3d;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top:-200px;
+            width:400px;
+            height:400px;
+            background: #555;
+            transform: rotateX(30deg)
+        }
+        .list{
+            transform-origin:  0 50%;
+            transform: rotateY(0deg);
+        }
+        .list1{
+            animation: list1 17s;
+        }
+        .list .page{
+            position: absolute;
+            width:400px;
+            height:400px;
+            color:#fff;
+            text-align: center;
+            line-height: 400px;
+            background: #396;
+            font-size:30px;
+        }
+        @keyframes list1   {
+            0%{
+                transform: rotateY(0deg)
+            }
+            50%{
+                transform: rotateY(-160deg)
+            }
+            to{
+                transform: rotateY(0deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="list list1">
+            <div class="page">duuliy</div>
+        </div>
+        <div class="list list2"></div>
+        <div class="list list3"></div>
+        <div class="list list4"></div>
+    </div>
+</body>
+</html>
