@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul li{
+        list-style-type: none;
+    }
+    .tab_header {
+        position: relative;
+        height:70px ;
+        border: 1px solid red;
+    }
+    .tab_header ul{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    /*激活状态，选中*/
+    .tab_header ul li.active{
+        margin-top: 0px;
+         height: 66px;
+        background-color: green;
+    }
+    .tab_header ul li{
+        margin-top: 16px;
+        height: 50px;
+        float: left;
+        width: 110px;
+        background-color: lightgrey;
+        border-radius: 5px 5px 0px 0px;
+        border: 1px solid green;
+    }
+    .tab_content{
+        height: 300px;
+        border: 1px solid black;
+    }
+    .tab_content .tab{
+        display: none;
+    }
+    .tab_content div.active{
+        display: block;
+    }
+</style>
+<body>
+<div class="tabs">
+    <div class="tab_header">
+        <ul>
+            <li class="active">选项卡1</li>
+            <li>选项卡2</li>
+            <li>选项卡3</li>
+            <li>选项卡4</li>
+            <li>选项卡5</li>
+        </ul>
+    </div>
+    <div class="tab_content">
+        <div id="tab1" class="tab active">
+            <p>content1 </p>
+        </div>
+        <div id="tab2" class="tab">
+            <p>content2 </p>
+        </div>
+        <div id="tab3" class="tab">
+            <p>content3 </p>
+        </div>
+        <div id="tab4" class="tab">
+            <p>content4 </p>
+        </div>
+        <div id="tab5" class="tab">
+            <p>content5 </p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var tabs = document.getElementsByClassName("tab_header");
+    var tabArr = tabs[0].getElementsByTagName("li");
+    for(var i=0; i<tabArr.length;i++){
+        tabArr[i].onclick=function(){
+            //头部  所有Liclass 全部清空
+            //当前点击的li加class="active"
+            var selfLi = this;
+            for(var j=0;j<tabArr.length;j++){
+                if(tabArr[j]==selfLi){
+                    tabArr[j].className="active";
+                    //内容
+                    document.getElementById("tab"+(j+1)).className+=" active";
+
+                }else{
+                    tabArr[j].className="";
+                    document.getElementById("tab"+(j+1)).className="tab";
+                }
+            }
+
+            //根据不能的点击，显示不同的内容
+
+
+        }
+    }
+</script>
+</body>
+</html>

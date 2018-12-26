@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'iconfont';
+        }
+
+        @font-face {
+            font-family: 'iconfont';
+            src: url('font_rtxm9qfhqf979zfr/iconfont.woff');
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('font_kjlqb7iifexqd7vi/iconfont.woff');
+        }
+
+        .home {
+            overflow: hidden;
+        }
+
+        #headerlogo {
+            width: 360px;
+            height: 140.563px;
+            text-align: center;
+            margin-left: 494px;
+            position: absolute;
+            background-color: white;
+            opacity: 0.7;
+
+        }
+
+        #headerlogo img {
+            width: 260px;
+            height: 70.5625px;
+            margin-top: 35px;
+            cursor: pointer;
+        }
+
+        nav {
+            height: 128px;
+            width: 1364px;
+            -webkit-transition: all .4s linear;
+            /*position: absolute;*/
+            /*margin-left: -100px;*/
+            /*overflow: hidden;*/
+            position: relative;
+            background-color: white;
+            z-index: 9999;
+        }
+
+        nav > ul {
+            text-align: center;
+            margin-left: 100px;
+            /*border: 1px solid black;*/
+            width: 1714px;
+        }
+
+        nav > ul > li {
+            list-style: none;
+            float: left;
+            color: rgba(71, 71, 71, 0.78);
+            font-size: 15px;
+            margin-top: 50px;
+
+        }
+
+        nav > ul > li > a {
+            text-decoration: none;
+            color: rgba(56, 56, 56, 0.89);
+            padding: 55px 15px;
+        }
+
+        .phone {
+            font-size: 30px;
+            margin-top: 40px;
+
+        }
+
+        .phone a {
+            color: #00cece;
+
+        }
+
+        .menuchild > ul > li {
+            list-style: none;
+            width: 225px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        /*.menuchild22{*/
+        /*list-style: none;*/
+        /*width: 225px;*/
+        /*height: 40px;*/
+        /*color: white;*/
+        /*text-align: center;*/
+        /*line-height: 40px;*/
+        /*}*/
+        .menuchild {
+            position: relative;
+            overflow: hidden;
+
+            /*margin-left: -50px;*/
+            /*display: none;*/
+        }
+
+        .lii:hover .menuchild {
+            /*display: block;*/
+            overflow: visible;
+        }
+
+        .menuchild > ul {
+            /*margin-top: 58px;*/
+            background-color: #00c1c1;
+            position: absolute;
+            bottom: 74px;
+            left: -40px;
+            z-index: 9999;
+        }
+
+        .xz1 {
+            border: 2px solid black;
+            width: 30px;
+        }
+
+        span:hover .xz1 {
+            -webkit-transform: rotate(90deg);
+            -webkit-transform-origin: 80% 100%;
+            width: 15px;
+            -webkit-transition: all 0.2s linear;
+        }
+
+        .xz2 {
+            border: 2px solid black;
+            width: 30px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .xz3 {
+            border: 2px solid black;
+            width: 30px;
+        }
+
+        span:hover .xz3 {
+            -webkit-transform: rotate(-90deg);
+            transform-origin: 80% 10%;
+            width: 15px;
+            -webkit-transition: all 0.2s linear;
+        }
+
+        #xz {
+            margin-top: 50px;
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        nav > ul > li > span {
+            width: 80px;
+            height: 130px;
+            background-color: #00c1c1;
+            float: left;
+
+        }
+
+        #svg img {
+            width: 210px;
+            height: 57px;
+        }
+
+        #svg {
+            width: 260px;
+            height: 130px;
+            float: left;
+            line-height: 150px;
+            text-align: center;
+            background-color: white;
+
+        }
+
+        #ts {
+            margin-top: 0;
+            margin-left: 85px;
+            display: none;
+            /*position: fixed;*/
+            /*float: left;*/
+        }
+
+        #book {
+            display: none;
+
+        }
+        .content1{
+            overflow:hidden;
+        }
+        .content1main1 {
+            width: 485px;
+            height: 485px;
+            float: left;
+            margin-left: 66px;
+            background-color: #474747;
+            color: white;
+            text-align: center;
+        }
+
+        .content1main1text > h1 {
+            font-size: 45px;
+            margin-top: 126px;
+        }
+
+        .time {
+            margin-top: 10px;
+        }
+
+        .time1 {
+            width: 194px;
+            height: 66px;
+            float: left;
+            text-align: center;
+            line-height: 66px;
+            margin-left: 42px;
+            background-color: #3b3b3b;
+            cursor: pointer;
+        }
+
+        .time2 {
+            width: 194px;
+            height: 66px;
+            float: left;
+            text-align: center;
+            line-height: 64px;
+            background-color: #3b3b3b;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .time1:hover, .time2:hover {
+            background-color: grey;
+        }
+
+        .content1main1 > button {
+            width: 220px;
+            height: 64px;
+            font-size: 22px;
+            color: grey;
+            background-color: ghostwhite;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .content1main1 > button:hover {
+            background-color: #444444;
+            color: white;
+        }
+
+        .content1main2 {
+            width: 728px;
+            height: 485px;
+            float: left;
+            /*border: 1px solid red;*/
+            overflow: hidden;
+        }
+        #pic{
+            width: 3000px;
+            height: 485px;
+            font-size: 0px;
+        }
+        .jt1,.jt2{
+            position: absolute;
+            z-index: 999;
+            color: white;
+            font-size: 50px;
+            margin-top: 200px;
+            cursor: pointer;
+        }
+        .jt2{
+            margin-left: 680px;
+        }
+        .imgt1{
+            background-image: url("children-running-along-shoreline.jpg");
+        }
+        .imgt2{
+            background-image: url("couple-beach-sunset.jpg");
+        }
+        .imgt3{
+            background-image: url("seahaven-winter-special.jpg");
+        }
+
+        .imgt{
+            width: 728px;
+            height: 485px;
+            float: left;
+            background-size: cover;
+            -webkit-transition: all .3s linear;
+
+        }
+        .warpt{
+            width: 728px;
+            height: 485px;
+            float: left;
+            -webkit-transition: all .3s linear;
+            background-color: rgba(0, 0, 255, 0.62);
+            opacity: 0.5;
+        }
+        .warpt>span{
+            font-size: 25px;
+            color: white;
+        }
+        .content2warp{
+            width: 1079px;
+            height: 615px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #content2 {
+            width: 3540px;
+            height: 615px;
+            font-size: 0;
+        }
+
+        #content2 > img {
+            width: 1079px;
+            height: 615px;
+        }
+
+        #jt {
+            position: absolute;
+            top: 500px;
+            left: 900px;
+            color: white;
+
+        }
+
+        #jtleft {
+            font-size: 40px;
+            float: left;
+            cursor: pointer;
+        }
+
+        #jtright {
+            font-size: 40px;
+            float: left;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        #small {
+            width: 335px;
+            height: 64px;
+            background-color: white;
+            font-size: 23px;
+            text-align: center;
+            line-height: 64px;
+            position: absolute;
+            top: 550px;
+            left: 743px;
+        }
+        #small>a{
+            text-decoration: none;
+            color:grey;
+        }
+        .content3{
+            height: 532px;
+            width: 100%;
+            background-color: white;
+            margin-top:590px;
+        }
+        #text{
+            margin-left: 66px;
+        }
+        #text>h2{
+            color: #2e91b3;
+            font-size: 60px;
+            padding-top: 100px;;
+            font-weight: 400;
+        }
+        #text>h4{
+            color:grey;
+            font-size: 25px;
+            font-weight: 400;
+            margin-top: 30px;
+        }
+        #text>p{
+            color:grey;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        .content4{
+            background-image:url("slideshow-quote-01.jpg") ;
+            height: 593px;
+            width: 100%;
+        }
+        #xuanfu{
+            width: 404px;
+            height: 404px;
+            background-color: white;
+            text-align: center;
+            opacity: 0.8;
+            margin-left: 64px;
+
+        }
+        #xuanfu>p{
+            color: #2e91b3;
+            font-size: 45px;
+            padding-left:42px;
+            padding-right: 42px;
+            padding-top:60px ;
+        }
+        .content5{
+            margin-top: 210px;
+            margin-left: 68px;
+            color: white;
+            /*position: relative;*/
+        }
+        #content5left{
+            width: 728px;
+            height: 485px;
+            float: left;
+            background-image: url("slideshow-wedding-01.jpg");
+
+        }
+        .warp2{
+            width: 728px;
+            height: 485px;
+            background-color: #2e91b3;
+            opacity: 0.5;
+        }
+        .zz{
+            font-size: 25px;
+            margin-top: 0px;
+            margin-left: 400px;
+            width: 300px;
+            height: 100px;
+            /*position: absolute;*/
+        }
+        #xd{
+            margin-left: 400px;
+            margin-top: 300px;
+        }
+        #xd1{
+            width: 95px;
+            height: 26px;
+            background-color: gainsboro;
+            color: #3b3b3b;
+            float: left;
+        }
+        .xd2{
+            width: 95px;
+            height: 26px;
+            float: left;
+            background-color: #2e91b3;
+            margin-left: 10px;
+        }
+        .content5right{
+            width: 485px;
+            height: 485px;
+            background-color: #464646;
+            float: left;
+            text-align: center;
+        }
+        .content5right>h1{
+            font-size: 50px;
+            margin-top: 100px;
+        }
+        .content5right>p{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .content5right>input{
+            width: 194px;
+            height: 66px;
+            color: white;
+            float: left;
+            margin-top: 10px;
+            background-color: #143d4d;
+            margin-left: 20px;
+        }
+        .content5right>button{
+            width: 196px;
+            height: 64px;
+            margin-top: 10px;
+            font-size: 25px;
+            color: grey;
+        }
+        .nav2{
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            width: 100%;
+        }
+        .nav2>ul{
+            margin-left: 80px;
+
+            border-bottom: 1px solid black;
+        }
+        .nav2>ul>li{
+            list-style: none;
+            float: left;
+            margin-left: 40px;
+            color:grey;
+        }
+        #bookon{
+            width: 140px;
+            height: 37px;
+            line-height: 37px;
+            background-color:#2e91b3 ;
+            margin-top: 40px;
+            color: white;
+        }
+        .footercont1{
+            height: 158px;
+            text-align: center;
+            line-height: 158px;
+            float: left;
+        }
+        .footercont1>ul{
+            margin-left: 55px;
+        }
+        .footercont1>ul>li{
+            list-style: none;
+            margin-left: 80px;
+            float: left;
+            font-size: 18px;
+            color: grey;
+        }
+        .footercont2{
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        .footercont2>ul{
+            margin-left: 100px;
+        }
+        .footercont2>ul>li{
+            list-style: none;
+            color:grey ;
+            font-size: 16px;
+            margin-left: 30px;
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="home">
+        <div id="headerlogo">
+            <img src="logo.png" alt=""/>
+        </div>
+        <img src="QQ截图20170627162318.png" alt=""/>
+    </div>
+</header>
+<!--<div class="warp"></div>-->
+<nav>
+    <ul id="ull">
+        <li id="hom"><a href="">HOME</a></li>
+        <li class="lii"><a href="">ACCOMMODATION</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>Tariffs</li>
+                    <li>Luxury extras</li>
+                    <li>Luxury Extras</li>
+                    <li>Penthouse</li>
+                    <li>2Bedroom Family</li>
+                    <li>2Bedroom</li>
+                    <li>1Bedroom</li>
+                    <li>Hasding Sttudio</li>
+                    <li>Studio</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li class="lii"><a href="">SERVICE</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>contact Us</li>
+                    <li>FAQ's</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li class="lii"><a href="">PACGOVES</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>Gift Vouchers</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="">REVIES</a></li>
+        <li><a href="">LOCATION</a></li>
+        <li class="lii"><a href="">NEWS</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>Media</li>
+                    <li>What's on</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li class="lii"><a href="">WENDDINGS</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>Wedding Gallery</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li class="lii">
+            <a href="">GALLERY</a>
+
+            <div class="menuchild">
+                <ul class="menuchild2">
+                    <li>Social Media Gallery</li>
+                    <li>Overview</li>
+                </ul>
+            </div>
+        </li>
+        <li id="book">
+            <a href="" id="book2">
+                BOOK ONLINE
+            </a>
+        </li>
+        <li class="phone"><a href="">07 5547 3422</a>
+        </li>
+        <li id="ts">
+            <div id="svg">
+                <img src="logo.svg" alt=""/>
+            </div>
+            <span id="cl" onclick="tc()">
+                <div id="xz">
+                    <div class="xz1"></div>
+                    <div class="xz2"></div>
+                    <div class="xz3"></div>
+                </div>
+                <i>Menu</i>
+            </span>
+        </li>
+
+    </ul>
+</nav>
+<section>
+    <div class="content1">
+        <div class="content1main1">
+            <div class="content1main1text">
+                <h1>Boonk Online</h1>
+
+                <p>Book direct for our best rate guarateed</p>
+            </div>
+            <div class="time">
+                <div class="time1">
+                    <span>Arrival</span>
+                </div>
+                <div class="time2">
+                    <span>Departure</span>
+                </div>
+            </div>
+            <button>Check Avaliability</button>
+        </div>
+        <div class="content1main2">
+            <div id="pic">
+                <div class="jt1" onclick="sy()">&#xe609</div>
+                <div class="jt2" onclick="xy()">&#xe608</div>
+                <div class="imgt imgt1">
+                    <div class="warpt warpt1"><span>11</span></div>
+                </div>
+                <div class="imgt imgt2">
+                    <div class="warpt warpt2"><span>22</span></div>
+                </div>
+                <div class="imgt imgt3">
+                    <div class="warpt warpt3"><span>33</span></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="content2warp">
+    <div id="content2">
+        <img src="slideshow-apartments-06.jpg" class="pict pict1" alt=""/>
+        <img src="slideshow-apartments-04.jpg" class="pict pict2" alt=""/>
+        <img src="slideshow-apartments-03.jpg" class="pict pict3" alt=""/>
+        <div id="jt">
+            <div id="jtleft" onclick="ly()">&#xe609;</div>
+            <div id="jtright"onclick="ry()">&#xe608;</div>
+        </div>
+        <div id="small">
+            <a href="">Penthouse Apartment</a>
+        </div>
+
+    </div>
+    </div>
+    <div class="content3">
+        <div id="text">
+            <h2>
+                Absolute Beachfront Apartments
+            </h2>
+            <h4>
+                Experience the ultimate Noosa holiday at Seahaven Noosa, located with direct access to Noosa Main Beach overlooking Laguna Bay. Located on the world famous Hastings Street with its renowned restaurants, cafes and boutique shopping you can enjoy the very best of Noosa at your door. For a beachfront holiday in Noosa, the perfect place to stay and relax is Seahaven Resort overlooking the sparkling Laguna Bay.
+            </h4>
+            <p>
+                The resort has undergone a complete makeover, now offering a sophisticated modern atmosphere, designed to accommodate the requirements of families, couples and corporates working or holidaying in the region. The contemporary design with luxurious furnishings and natural finishes create a feeling of relaxed sophistication, serenity and understated luxury accommodation. With absolute beachfront access to Noosa's Main Beach and street access to Hastings Street, Seahaven Resort provides a range of holiday accommodation for couples and families in not only one of the best locations Noosa has to offer, but also great service.
+            </p>
+        </div>
+    </div>
+    <div class="content4">
+        <div id="xuanfu">
+            <p>
+                Enjoy relaxed sophistication for couples & families
+            </p>
+        </div>
+    </div>
+    <div class="content5">
+        <div id="content5left">
+            <div class="warp2">
+                <div class="zz">
+                    <p>Receive news, promotions and events</p>
+                </div>
+                <div id="xd">
+                    <div id="xd1">
+                        <span>Weddings</span>
+                  </div>
+                    <div class="xd2">
+                        <span>What on</span>
+                    </div>
+                    <div class="xd2">
+                        <span>Location</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content5right">
+            <h1>Subscribe</h1>
+            <p>Receive news, promotions and events</p>
+            <input type="text" value="Name"/>
+            <input type="text" value="Email"/>
+            <button>Stay Updated</button>
+        </div>
+    </div>
+</section>
+<div class="nav2">
+    <ul>
+        <li>ACCOMMODATION</li>
+        <li>GUEST SERVICES</li>
+        <li>PACKANGES</li>
+        <li>REVIEWS</li>
+        <li>NEWS</li>
+        <li>WEDDINGS</li>
+        <li>GALLERY</li>
+        <li id="bookon">BOOK ONLINE</li>
+    </ul>
+</div>
+<footer>
+    <div class="footercont1">
+        <ul>
+            <li>WHAT ON</li>
+            <li>CONTACT US</li>
+            <li>FAQS</li>
+            <li>&#xe602;</li>
+            <li>&#xe61d;</li>
+            <li>&#xe684;</li>
+            <li>&#xe68d;</li>
+            <li>+61 75447 3422</li>
+        </ul>
+
+    </div>
+    <div class="footercont2">
+        <ul>
+            <li>Copyright © Seahaven Noosa Resort </li>
+            <li>15 Hastings Street, Noosa Heads, QLD 4567</li>
+            <li>Home</li>
+            <li> Privacy Policy  Website Design</li>
+
+        </ul>
+    </div>
+</footer>
+<script>
+    var objnav = document.getElementsByTagName("nav");
+    //            console.log(objnav[0].childNodes)
+    var objts = document.getElementById("ts");
+    //        console.log(objts);
+    var objbook = document.getElementById("book");
+    var objul = document.getElementsByClassName("menuchild2");
+    //                console.log(objul[i].childNodes);
+    var objhome = document.getElementById("hom");
+    var objmenuchild = document.getElementsByClassName("menuchild");
+    //        console.log(objmenuchild[0]);
+    var objxz1 = document.getElementsByClassName("xz1");
+    //        console.log(objxz1[0]);
+    var objxz2 = document.getElementsByClassName("xz2");
+    var objull = document.getElementById("ull");
+//    console.log(objull.childNodes[0])
+    window.onscroll = function () {
+
+        var objscro = document.body.scrollTop;
+//        console.log(objscro);
+
+        if (objscro >= 598) {
+            objts.style.display = "block";
+            objnav[0].style.position = "fixed";
+            objnav[0].style.top = "0";
+            objnav[0].style.left = "-1360px";
+
+            for (var i = 0; i <= objmenuchild.length - 1; i++) {
+                objmenuchild[i].childNodes[1].style.top = "55px";
+                objmenuchild[i].childNodes[1].style.left = "-50px";
+//                objmenuchild[i].childNodes[1].style.backgroundColor="#00c1c1";
+
+                var objli = objul[i].childNodes;
+//                console.log(objul[i].childNodes);
+                for (var j = 0; j <= objul[i].childNodes.length - 1; j++) {
+                    if (j % 2 == 1) {
+                        objul[i].childNodes[j].style.width = "225px";
+                        objul[i].childNodes[j].style.height = "40px";
+                        objul[i].childNodes[j].style.backgroundColor = "#00c1c1"
+                    }
+                }
+            }
+        } else {
+            objnav[0].style.left = "0px";
+            objnav[0].style.position = "relative";
+            objts.style.display = "none";
+            objbook.style.display = "none";
+//            objull.childNodes.insertData(0,objhome);
+            for (i = 0; i <= objmenuchild.length - 1; i++) {
+                objmenuchild[i].childNodes[1].removeAttribute("style");
+
+                for (j = 0; j <= objul[i].childNodes.length - 1; j++) {
+                    if (j % 2 == 1) {
+                        objul[i].childNodes[j].style.width = "225px";
+                        objul[i].childNodes[j].style.height = "40px";
+                        objul[i].childNodes[j].style.backgroundColor = "#00c1c1"
+                    }
+                }
+            }
+        }
+    };
+    function tc() {
+        objnav[0].style.left = "0px";
+        objts.style.display = "none";
+//        var objhome=document.getElementById("hom");
+        var objul = document.getElementById("ull");
+        objul.removeChild(objhome);
+        objbook.style.display = "block";
+        var objbook2 = document.getElementById("book2");
+        objbook2.style.backgroundColor = "#50B3D5";
+        objbook2.style.color = "white";
+//        var text=document.createTextNode("BOOK ONLINE");
+//        li.appendChild(text);
+//        objnav[0].appendChild(li);
+//        objnav[0].appendD
+//        objnav[0].innerHTML=("beforeBegin", objnav[0].innerHTML+"<li>hj</li>")
+    }
+    //    function tc(){
+    //        objnav[0].style.left="0px";
+    //        objts.style.display="none";
+    ////        var objhome=document.getElementById("hom");
+    //        var objul=document.getElementById("ull");
+    //        objul.removeChild(objhome);
+    //        objbook.style.display="block";
+    //        var objbook2=document.getElementById("book2");
+    //        objbook2.style.backgroundColor="#50B3D5";
+    //        objbook2.style.color="white";
+    ////        var text=document.createTextNode("BOOK ONLINE");
+    ////        li.appendChild(text);
+    ////        objnav[0].appendChild(li);
+    ////        objnav[0].appendD
+    ////        objnav[0].innerHTML=("beforeBegin", objnav[0].innerHTML+"<li>hj</li>")
+    //    }
+
+    //    function objmouseover(a) {
+    //        var b = a.parentNode;
+    //        var c = b.getElementsByTagName("li");
+    //        for (var i = 0; i < c.length; i++) {
+    //            console.log(c[i]);
+    //            c[i].style.display = "block";
+    //        }
+    //    }
+    //    function objmouseout(b){
+    //        var c = b.getElementsByTagName("li");
+    //        for(var j=0;j< c.length;j++){
+    //            c[j].style.display="none"
+    //        }
+    //    }
+    function xy(){
+        var objpic=document.getElementById("pic");
+        var objimgt=document.getElementsByClassName("imgt");
+//        console.log(objpic);
+        objimgt[0].style.marginLeft="-728px";
+        setTimeout(function(){
+            objimgt[0].style.marginLeft="0px";
+            objpic.appendChild(objimgt[0])
+        },300)
+    }
+    function sy(){
+        var objpic=document.getElementById("pic");
+        var objimgt=document.getElementsByClassName("imgt");
+        objpic.insertBefore(objimgt[2],objimgt[0]);
+        objimgt[0].style.marginLeft="-728px";
+        setTimeout(function(){
+            objimgt[0].style.marginLeft="0px"
+        },300)
+    }
+
+    var zd=setInterval(xy,1000);
+    var objpic=document.getElementById("pic");
+    objpic.onmouseover=function(){clearInterval(zd)};
+    objpic.onmouseout=function(){zd=setInterval(xy,1000)};
+
+    function ry(){
+        var objpict=document.getElementsByClassName("pict");
+        var objcontent2=document.getElementById("content2");
+        var objjt=document.getElementById("jt");
+        console.log(objjt);
+        objpict[0].style.marginLeft="-1079px";
+        setTimeout(function(){
+            objpict[0].style.marginLeft="0px";
+            objcontent2.insertBefore(objpict[0],objjt)
+        },300);
+    }
+    function ly(){
+        var objpict=document.getElementsByClassName("pict");
+        var objcontent2=document.getElementById("content2");
+        objcontent2.insertBefore(objpict[2],objpict[0]);
+        objpict[0].style.marginLeft="-1079px";
+        setTimeout(function(){
+            objpict[0].style.marginLeft="0px"
+        },300)
+    }
+
+
+</script>
+</body>
+</html>

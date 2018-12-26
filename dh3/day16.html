@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-family:'iconfont';
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            background-color: rgba(32, 32, 32, 0.92);
+            height: 800px;
+            overflow: hidden;
+        }
+        #content{
+            width: 100%;
+            height: 233px;
+            background-color: white;
+            overflow: hidden;
+            margin-top: 150px;
+        }
+        .title{
+            margin-top: 60px;
+            margin-left: 50px;
+        }
+        .title>ul>li{
+            list-style: none;
+            float: left;
+            width: 130px;
+            height: 50px;
+            background-color: #b4b4b4;
+            color: #767676;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-left: 5px;
+            text-align: center;
+            line-height: 30px;
+            -webkit-transition: all 0.3s linear;
+        }
+        .list{
+            width: 1200px;
+            height: 102px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 1px solid #b4b4b4;
+            margin-top: 30px;
+            margin-left: 55px;
+            position: absolute;
+            z-index: 999;
+            background-color: white;
+            -webkit-transition: all 0.3s linear;
+        }
+        .title>ul>li:nth-of-type(1){
+            margin-top:-20px;
+            color:white;
+            background-color:green
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div id="content">
+        <div class="title">
+            <ul>
+                <li onclick="mychange(this)">cont1</li>
+                <li onclick="mychange(this)">cont2</li>
+                <li onclick="mychange(this)">cont3</li>
+                <li onclick="mychange(this)">cont4</li>
+                <li onclick="mychange(this)">cont5</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h3>Content 1</h3>
+            <p>Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst.</p>
+        </div>
+    </div>
+</section>
+<script>
+    function mychange(obj) {
+        var h3obj=document.getElementsByTagName("h3");
+        var pobj=document.getElementsByTagName("p");
+        var liobj= obj.parentNode.getElementsByTagName("li");
+        for(var i=0;i<=liobj.length-1;i++){
+            if (obj!=liobj[i]){
+                liobj[i].style.marginTop="0px"
+                liobj[i].style.color="#767676";
+                liobj[i].style.backgroundColor="#b4b4b4"
+            }
+        }
+            if(liobj[0]==obj){
+                h3obj[0].innerText="Content 1";
+                pobj[0].innerText="Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst."
+            }else if(liobj[1]==obj){
+                h3obj[0].innerText="Content 2";
+                pobj[0].innerText="Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst."
+            }else if(liobj[2]==obj){
+                h3obj[0].innerText="Content 3";
+                pobj[0].innerText="Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst."
+            }else if(liobj[3]==obj){
+                h3obj[0].innerText="Content 4";
+                pobj[0].innerText="Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst."
+            }else if(liobj[4]==obj){
+                h3obj[0].innerText="Content 5";
+                pobj[0].innerText="Aliquam eleifend magna mauris, id egestas eros dictum ac. Vivamus ac turpis at nisi mattis aliquam. In hac habitasse platea dictumst."
+            }
+
+        if(obj.style.marginTop==""){
+            obj.style.marginTop="0px";
+        }
+        if(obj.style.marginTop=="0px"){
+            obj.style.marginTop="-20px";
+            obj.style.color="white";
+            obj.style.backgroundColor="green"
+        }else if(obj.style.marginTop=="-20px"){
+            obj.style.marginTop="0px";
+            obj.style.color="#767676";
+            obj.style.backgroundColor="#b4b4b4"
+        }
+    }
+</script>
+</body>
+</html>

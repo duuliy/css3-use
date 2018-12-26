@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face{
+            font-family: 'iconfont';
+            src: url('font_21hojo43yxw53ik9/iconfont.woff');
+        }
+        *{
+            font-family:'iconfont';
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 300px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid black;
+            line-height: 40px;
+            overflow: hidden;
+            cursor: pointer;
+
+        }
+        section{
+            background-color: rgba(32, 32, 32, 0.92);
+            height: 800px;
+            overflow: hidden;
+        }
+        .menuChild div{
+            height: 40px;
+        }
+        .menuChild div:hover{
+            background-color: hotpink;
+        }
+        .logo{
+            float: right;
+            margin-right: 5px;
+        }
+        .main{
+            margin-top: 100px;
+            margin-left: 400px;
+        }
+        li>span:nth-of-type(3){
+            -webkit-transition: all 0.3s linear;
+        }
+        .menuChild{
+            background-color: black;
+            color:white ;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="main">
+        <ul>
+            <li onclick="obj(this)">
+                <span>&#xe6f6;</span>
+                <span>Diseno web</span>
+                <span class="logo" >&#xe628</span>
+                <div class="menuChild">
+                    <div>photo shop</div>
+                    <div>html</div>
+                    <div>css</div>
+                    <div>mmm web</div>
+                </div>
+            </li>
+            <li onclick="obj(this)">
+                <span>&#xe6f6;</span>
+                <span>Disrrlllo font-end</span>
+                <span class="logo" >&#xe628</span>
+                <div class="menuChild">
+                    <div>js</div>
+                    <div>jq</div>
+                    <div>F js</div>
+                </div>
+            </li>
+            <li onclick="obj(this)">
+                <span>&#xe611;</span>
+                <span >Diseno resposive</span>
+                <span class="logo">&#xe628</span>
+                <div class="menuChild">
+                    <div>tablets</div>
+                    <div>dispojkn</div>
+                    <div>mde</div>
+                    <div>outer dispositives</div>
+                </div>
+            </li>
+            <li onclick="obj(this)">
+                <span>&#xe74e;</span>
+                <span>posena web</span>
+                <span class="logo">&#xe628</span>
+                <div class="menuChild">
+                    <div>pGoolg</div>
+                    <div>bling</div>
+                    <div>yahoo</div>
+                    <div>otros busscadores</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<script>
+    function obj(a){
+        var divList= a.getElementsByTagName("div");
+        var liobj= a.parentNode.getElementsByTagName("li");
+        var objlogo= a.getElementsByClassName("logo");
+        var objlog=document.getElementsByClassName("logo");
+        for(var i=0;i<=liobj.length-1;i++){
+            if(a!=liobj[i]){
+                liobj[i].style.height ="40px";
+                objlog[i].style.WebkitTransform="rotate(0deg)";
+            }
+        }
+        if(a.style.height==""){
+            a.style.height ="40px"
+        }
+        var hei= parseInt(a.style.height);
+        if(hei>40){
+            a.style.height="40px";
+            objlogo[0].style.WebkitTransform="rotate(0deg)";
+        } else{
+            var b=divList.length;
+            var count =b-1;
+            a.style.height=count*40+"px";
+            objlogo[0].style.WebkitTransform="rotate(180deg)";
+        }
+
+
+    }
+
+</script>
+</body>
+</html>

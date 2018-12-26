@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: "myfont";
+            src: url("font/iconfont.woff");
+        }
+
+        html {
+
+        }
+
+        body {
+            font-family: "myfont";
+            height: 1500px;
+            min-width: 1300px;
+            overflow-x: hidden;
+        }
+
+        button {
+            border: 0;
+            cursor: pointer;
+        }
+
+        .topBanner {
+            height: 585px
+        }
+
+        .topBanner video {
+            width: 100%;
+        }
+
+        header {
+            position: absolute;
+            width: 100%;
+        }
+
+        nav {
+            position: relative;
+            z-index: 9999;
+            transition: all .5s linear;
+            background: #fff;
+            width: 100%;
+        }
+
+        nav ul {
+            height: 128px;
+            text-align: center;
+            width: 1217px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            float: left;
+            padding: 56px 12px;
+            position: relative;
+            font: 300 16px/20px Roboto, arial;
+            cursor: pointer;
+            margin: 0 2px;
+        }
+
+        nav ul .navMenueLi:hover {
+            background: #f5f4f0;
+        }
+
+        nav ul li a {
+            color: #888;
+            font-size: 16px;
+        }
+
+        nav ul li ul {
+            /*overflow: hidden;*/
+
+            position: absolute;
+
+            width: 225px;
+            display: none;
+            top: 120px;
+            left: calc(50% - 112.5px);
+
+        }
+
+        nav ul li ul {
+
+            top: -128px;
+            display: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+
+        }
+
+        nav ul li ul li {
+            transform: rotate(180deg);
+        }
+
+        nav ul li ul li {
+            background: #50b3d5;
+            padding: 12px;
+            color: #fff;
+            display: block;
+            float: none;
+
+        }
+
+        nav ul li ul li:hover {
+            background: #f5f4f0;
+            color: #50b3d5;
+
+        }
+
+        nav ul li ul li a {
+            color: #fff;
+        }
+
+        nav .phone {
+            color: #2e91b3;
+            font-size: 37px;
+            position: absolute;
+            right: 0;
+        }
+
+        nav .book {
+            background: #2e91b3;
+
+        }
+
+        nav .book a {
+            color: #fff;
+        }
+
+        nav .logo {
+            background: #fff;
+            position: absolute;
+            width: 260px;
+            top: 0;
+            left: 100%;
+            padding: 37px 25px 36px 25px;
+            float: left;
+        }
+
+        nav .logo img {
+            width: 210px
+        }
+
+        .menuShow {
+            height: 132px;
+            width: 79px;
+            position: absolute;
+            right: 0;
+            background: #2e91b3;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .menuShow:hover::before {
+            transform: rotate(90deg);
+        }
+
+        .menuShow:hover:after {
+            transform: rotate(-90deg);
+        }
+
+        .menuIcon {
+            width: 37px;
+            height: 3px;
+            background: #fff;
+            display: block;
+            position: absolute;
+            top: 56px;
+            left: 19px;
+        }
+
+        .menuShow:before {
+            width: 37px;
+            height: 3px;
+            background: #fff;
+            display: block;
+            position: absolute;
+            top: 47px;
+            left: 19px;
+            content: '';
+            transform: rotate(0deg);
+            transform-origin: 25% 50%;
+            transition: all .1s linear;
+        }
+
+        .menuShow:after {
+            width: 37px;
+            height: 3px;
+            background: #fff;
+            top: 65px;
+            left: 19px;
+            display: block;
+            position: absolute;
+            content: '';
+            transform: rotate(0deg);
+            transform-origin: 25% 50%;
+            transition: all .1s linear;
+        }
+
+        .bookOnline {
+            width: 1217px;
+            height: 485px;
+            margin: 0 auto;
+            top: 132px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bookOnlineLeft {
+            width: 487px;
+            height: 359px;
+            background: #594E48;
+            padding-top: 126px;
+            text-align: center;
+            float: left;
+
+        }
+
+        .bookOnlineLeft h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 55px;
+        }
+
+        .bookOnlineLeft p {
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .bookOnlineLeft button {
+            margin-top: 10px;
+        }
+
+        .btnCalendar {
+            background: #4d453e url("img/datepicker.svg") 133px 15px no-repeat;
+            cursor: pointer;
+            padding: 20px;
+            width: 192px;
+            text-align: left;
+            color: #fff;
+            font-size: 16px;
+
+        }
+
+        .btnCheck {
+            padding: 20px;
+            font-size: 25px;
+            color: #888;
+            background: #fff;
+        }
+
+        .bookOnlineRight {
+            width: 730px;
+            height: 485px;
+            float: right;
+            overflow: hidden;
+        }
+
+        .silder {
+            position: relative;
+            cursor: pointer;
+            height: 485px;
+        }
+
+        .silder:hover .maskTitle {
+            top: 60px;
+            right: 60px;
+        }
+
+        .silder img {
+            width: 730px;
+            height: 485px;
+            font-size: 0;
+            position: relative;
+            z-index: -1;
+
+        }
+
+        .silder .pre {
+            left: 38px;
+            position: absolute;
+            top: 200px;
+            width: 23px;
+            height: 42px;
+
+        }
+
+        .silder .next {
+
+            position: absolute;
+            top: 200px;
+            width: 23px;
+            height: 42px;
+            right: 38px;
+        }
+
+        .silder .silderBox {
+            /*width: 2190px;*/
+            width: 3650px;
+            position: relative;
+
+        }
+
+        .silder .mask {
+            width: 730px;
+            height: 485px;
+            background: rgba(150, 209, 230, 0.6);
+
+            float: left;
+            position: relative;
+            transition: all .3s linear;
+
+        }
+
+        .maskTitle {
+            width: 440px;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+            transition: all .1s linear;
+        }
+
+        .maskTitle p {
+            font-size: 25px;
+            color: #fff;
+            width: 440px;
+            text-align: right;
+        }
+
+        .maskTitle h1 {
+            font-size: 60px;
+            color: #fff;
+            width: 440px;
+            text-align: right;
+        }
+
+        .sliderDot {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+        }
+
+        .sliderDot a {
+            width: 13px;
+            height: 13px;
+            margin: 0 2px;
+            opacity: .5;
+            border: 3px solid #fff;
+            border-radius: 10px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .sliderTab {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        .sliderTab button {
+
+        }
+
+        .productShow {
+            background: url("img/apartments-bg.jpg") fixed;
+            height: 760px;
+            border-top: 1px solid transparent;
+            position: relative;
+            /*z-index: -2;*/
+        }
+
+        .productShowsliader {
+            margin-top: 189px;
+            position: relative;
+            height: 570px;
+        }
+
+        .productShowsliaderBox {
+            position: relative;
+            height: 570px;
+            width: 1000px;
+        }
+
+        .productShowsliaderBox .productImgBox {
+            position: absolute;
+            transition: all .3s linear;
+            opacity: 0;
+
+        }
+
+        .productImgBox span {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px 30px;
+            color: #888;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+            display: inline-block;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .productImgBox span:hover {
+            color: #fff;
+            animation: mymove2 .5s;
+            -webkit-animation: mymove2 .5s;
+        }
+
+        @-webkit-keyframes mymove2 {
+            0% {
+
+                right: 0;
+            }
+
+            75% {
+                right: 10px;
+            }
+            80% {
+                right: 0;
+            }
+            90% {
+                right: 3px;
+            }
+            100% {
+                right: 0;
+            }
+        }
+
+        .productImgBox span:before {
+            background: #615b55;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+            -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+            z-index: -1;
+
+        }
+
+        .productImgBox span:hover::before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            z-index: -1;
+            animation: mymove .5s;
+            -webkit-animation: mymove .5s;
+        }
+
+        @-webkit-keyframes mymove {
+            0% {
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+            }
+            75% {
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+            95% {
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%;
+                -webkit-transform: scaleX(0.9);
+                transform: scaleX(0.9);
+            }
+            100% {
+                -webkit-transform-origin: 0 50%;
+                transform-origin: 0 50%;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+
+        .productImgBox span:hover .bgMask {
+            width: 141px;
+        }
+
+        .productShowsliader button {
+            position: absolute;
+            bottom: 136px;
+            z-index: 999;
+        }
+
+        .productSliaderPre {
+            right: 148px;
+        }
+
+        .productSliaderNext {
+            right: 82px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="wrap">
+    <div class="topBanner">
+        <video src="img/home.mp4" autoplay="autoplay"></video>
+    </div>
+    <header>
+        <nav style="transform:translate3d(0,0,0);">
+            <div class="logo">
+                <img src="img/logo.svg">
+                <img src="img/logo.png" style="display: none">
+
+                <div class="menuShow" onclick="menuClick()">
+                    <span class="menuIcon"></span>
+                </div>
+
+
+            </div>
+            <ul id="navMenue">
+                <li id="homeLi" class="navMenueLi"><a href="/">HOME</a></li>
+                <li class="navMenueLi"><a href="/">ACCOMMODATION</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">Studio</a></li>
+                        <li><a href="/">Hastings Studio</a></li>
+                        <li><a href="/">2 Bedroom</a></li>
+                        <li><a href="/">2 Bedroom Family</a></li>
+                        <li><a href="/">Penthouse</a></li>
+                        <li><a href="/">1 Bedroom</a></li>
+                        <li><a href="/">Luxury Extras</a></li>
+                        <li><a href="/">Tariffs</a></li>
+                    </ul>
+                </li>
+                <li class="navMenueLi"><a href="/">SERVICES</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">FAQ's</a></li>
+                        <li><a href="/">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="navMenueLi"><a href="/">PACKAGES</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">Gift Vouchers</a></li>
+
+                    </ul>
+                </li>
+                <li class="navMenueLi"><a href="/">REVIEWS</a></li>
+                <li class="navMenueLi"><a href="/">LOCATION</a></li>
+                <li class="navMenueLi"><a href="/">NEWS</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">What's On</a></li>
+                        <li><a href="/">Media</a></li>
+                    </ul>
+                </li>
+                <li class="navMenueLi"><a href="/">WEDDINGS</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">Wedding Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="navMenueLi"><a href="/">GALLERY</a>
+                    <ul class="menuUl">
+                        <li><a href="/">Overview</a></li>
+                        <li><a href="/">Social Media Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="book"><a href="/">Book online</a></li>
+                <li class="phone">07 5447 3422</li>
+
+            </ul>
+        </nav>
+    </header>
+</div>
+<section>
+    <div class="bookOnline">
+        <div class="bookOnlineLeft">
+            <h1>Book Online</h1>
+
+            <p>Book direct for our best rate guaranteed</p>
+            <button type="button" class=" btnCalendar">Arrival</button>
+            <button type="button" class=" btnCalendar">Departure</button>
+            <button type="button" class="btnCheck">Check Availability</button>
+        </div>
+        <div class="bookOnlineRight">
+            <div class="silder">
+                <div class="silderBox" style="left: -730px;transition-duration: 0s">
+                    <div class="mask">
+                        <img src="img/slider03.jpg">
+
+                        <div class="maskTitle">
+                            <p>Weddings, Anniversary Romance Package</p>
+
+                            <h1>$680</h1>
+
+                            <p>per night (min. 3 nights)</p>
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <img src="img/slider01.jpg">
+
+                        <div class="maskTitle">
+                            <p>June School Holiday Beach Bonanza</p>
+
+                            <h1>SAVE</h1>
+
+                            <p>20% off 3 nights or more</p>
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <img src="img/slider02.jpg">
+
+                        <div class="maskTitle">
+                            <p>Cosy Winter Special</p>
+
+                            <h1>BOOK</h1>
+
+                            <p>4 nights, get your 5th night free – this winter!</p>
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <img src="img/slider03.jpg">
+
+                        <div class="maskTitle">
+                            <p>Weddings, Anniversary Romance Package</p>
+
+                            <h1>$680</h1>
+
+                            <p>per night (min. 3 nights)</p>
+                        </div>
+                    </div>
+                    <div class="mask">
+                        <img src="img/slider01.jpg">
+
+                        <div class="maskTitle">
+                            <p>Weddings, Anniversary Romance Package</p>
+
+                            <h1>$680</h1>
+
+                            <p>per night (min. 3 nights)</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="pre" type="button">上一页</button>
+                <button class="next" type="button" onclick="nextSlider()">下一页</button>
+                <div class="sliderDot">
+                    <a id="dot1" class="dot" onclick="dotClick(this)"></a>
+                    <a id="dot2" class="dot" onclick="dotClick(this)"></a>
+                    <a id="dot3" class="dot" onclick="dotClick(this)"></a>
+                </div>
+                <div class="sliderTab">
+                    <button type="button"></button>
+                    <button type="button"></button>
+                    <button type="button"></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="productShow">
+
+        <div class="productShowsliader">
+            <div class="productShowsliaderBox">
+                <div class="productImgBox">
+                    <img src="img/slideshow-apartments-01.jpg">
+
+                    <span>11111</span>
+
+
+                </div>
+                <div class="productImgBox">
+                    <img src="img/slideshow-apartments-02.jpg">
+
+                    <div class="bgMask"></div>
+                    <span>PPPPPPPPPppppppppppppppppppppp</span>
+                </div>
+                <div class="productImgBox">
+                    <img src="img/slideshow-apartments-03.jpg">
+                    <span>PPPPPPPPP</span>
+                </div>
+                <div class="productImgBox">
+                    <img src="img/slideshow-apartments-04.jpg">
+
+                    <div class="bgMask"></div>
+                    <span>PPPPPPPPP</span>
+                </div>
+                <button class="productSliaderPre">上一页</button>
+                <button class="productSliaderNext" onclick="productNext()">下一页</button>
+            </div>
+
+            <h2 class="sliderTitle">Studio Apartment</h2>
+
+        </div>
+
+    </div>
+
+    <div class="productComent">
+        <h1>Absolute Beachfront Apartments</h1>
+
+        <p>
+            Experience the ultimate Noosa holiday at Seahaven Noosa, located with direct access to Noosa Main Beach
+            overlooking Laguna Bay. Located on the world famous Hastings Street with its renowned restaurants, cafes
+            and
+            boutique shopping you can enjoy the very best of Noosa at your door. For a beachfront holiday in Noosa,
+            the
+            perfect place to stay and relax is Seahaven Resort overlooking the sparkling Laguna Bay.
+        </p>
+    </div>
+
+    <div class="productRelax">
+        <h1>Enjoy relaxed sophistication for couples & families</h1>
+    </div>
+
+    <div class="productContact">
+        <div class="productContactLeft">
+            <h3>Thinking of getting married in Noosa? Seahaven can offer a superb <strong>private
+                beachfront </strong>
+                wedding!
+            </h3>
+        </div>
+        <div class="productContactRight">
+            <h1>Subscribe</h1>
+
+            <p>Receive news, promotions and events</p>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Email">
+            <button type="button">Say Updated</button>
+        </div>
+    </div>
+    <div class="subNav">
+        <ul>
+            <li><a href="/">Accommodation</a></li>
+            <li><a href="/">Guest Services</a></li>
+            <li><a href="/">Packages</a></li>
+            <li><a href="/">Reviews</a></li>
+            <li><a href="/">News</a></li>
+            <li><a href="/">Weddings</a></li>
+            <li><a href="/">Gallery</a></li>
+            <li class="subNavBook"><a href="/">Book Online</a></li>
+        </ul>
+    </div>
+    <div class="contact">
+        <ul>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+            <li><a href="/"></a></li>
+        </ul>
+    </div>
+</section>
+<footer>
+    Copyright © Seahaven Noosa Resort
+    <span></span>
+    15 Hastings Street, Noosa Heads, QLD 4567
+    <span></span>
+    <a href="/">Home</a>
+    <span></span>
+    <a href="/">Privacy Policy</a>
+    <a href="/"><img src=""></a>
+</footer>
+<script>
+    window.onscroll = function () {
+        getScroll();
+    };
+
+    //setInterval(nextSlider, 5000);
+
+    /**
+     * [监听滚动条]
+     */
+    function getScroll() {
+        var getScroll = document.body.scrollTop;
+
+        if (getScroll >= 583) {
+            hiddenNav();
+            reverseMenu(0, 132);
+            navHomeHidden();
+        } else {
+            showNav();
+            reverseMenu(180, -128);
+            navHomeShow();
+
+        }
+    }
+    /**
+     * [导航栏点击事件]
+     *
+     */
+    function menuClick() {
+        var myNav = document.getElementsByTagName("nav")[0];
+        myNav.setAttribute("style", "transform:translate3d(0,0,0);position:fixed;top:0")
+    }
+
+    /**
+     * [导航栏翻转]
+     *
+     */
+
+    function reverseMenu(numRotate, numTop) {
+        var menuUl = document.getElementsByClassName("menuUl");
+        for (i = 0; i < menuUl.length; i++) {
+            menuUl[i].setAttribute("style", " transform: rotate(" + numRotate + "deg);top:" + numTop + "px");
+            var menuLi = menuUl[i].getElementsByTagName("li");
+            for (j = 0; j < menuLi.length; j++) {
+                menuLi[j].setAttribute("style", " transform:rotate(" + numRotate + "deg);");
+            }
+
+        }
+
+    }
+
+    /**
+     * [导航栏出现]
+     *
+     */
+    function showNav() {
+        var myNav = document.getElementsByTagName("nav")[0];
+        myNav.setAttribute("style", "transform:translate3d(0,0,0);position:relative")
+    }
+    /**
+     * [导航栏消失]
+     *
+     */
+    function hiddenNav() {
+        var myNav = document.getElementsByTagName("nav")[0];//
+        myNav.setAttribute("style", "transform:translate3d(-1350px,0,0);position:fixed;top:0px")
+    }
+
+    /**
+     * [控制导航栏字体出现]
+     */
+
+    function navHomeShow() {
+        var homeLi = document.getElementById("homeLi");
+        homeLi.setAttribute("style", "display:block");
+        var book = document.getElementsByClassName("book")[0];
+        book.setAttribute("style", "display:none")
+    }
+
+    /**
+     * [控制导航栏字体消失]
+     */
+
+    function navHomeHidden() {
+        var homeLi = document.getElementById("homeLi");
+        homeLi.setAttribute("style", "display:none");
+        var book = document.getElementsByClassName("book")[0];
+        book.setAttribute("style", "display:block")
+    }
+
+    /**
+     * [上一页轮播]
+     */
+    test();
+    function test() {
+        var pre = document.getElementsByClassName("pre")[0];
+        pre.addEventListener("click", preSlider);
+
+    }
+
+    function preSlider() {
+        var  count = 0;
+        var a = document.getElementsByClassName("silderBox")[0];
+        var pre = document.getElementsByClassName("pre")[0];
+
+        var b = parseInt(a.style.left);
+        console.log(b);
+        var c = b + 730;
+
+        if (b >= -730) {
+            a.style.webkitTransitionDuration = " 0.5s";
+            a.style.left = c + "px";
+            console.log(c);
+            setTimeout(function () {
+                a.style.webkitTransitionDuration = " 0s";
+            }, 100);
+            setTimeout(function () {
+                a.style.left = "-2190px";
+            }, 430);
+
+        } else {
+            a.style.left = c + "px";
+            a.style.webkitTransitionDuration = " 0.5s"
+        }
+
+        setTimeout(function(){
+            pre.addEventListener("click", function () {
+                preSlider();
+            })
+        },1000);
+        pre.removeEventListener("click", preSlider);
+
+//        setTimeout(pre.addEventListener("click", function () {
+//            preSlider();
+//        }), 300);
+    }
+
+    /**
+     * [下一页轮播]
+     */
+    function nextSlider() {
+        var a = document.getElementsByClassName("silderBox")[0];
+        var b = parseInt(a.style.left);
+        console.log(b);
+        var c = b - 730;
+        if (b < -2190) {
+
+            a.style.left = "-730px"
+
+        } else {
+            setTimeout(a.style.left = c + "px", 1000)
+
+        }
+    }
+
+    /**
+     * [轮播小圆点切换]
+     */
+    function dotClick(j) {
+//        var mask = document.getElementsByClassName("mask");
+//        var silderBox = document.getElementsByClassName("silderBox")[0];
+//        mask[0].style.marginLeft = "-728px";
+//        setTimeout(function () {
+//            mask[2].style.marginLeft = "0px";
+//            silderBox.appendChild(mask[2]);
+//        }, 300)
+
+
+    }
+
+    /**
+     * [轮播2]
+     */
+    showImage(0);
+    function showImage(j) {
+        var productShowsliaderBox = document.getElementsByClassName("productShowsliaderBox")[0];
+        var images = productShowsliaderBox.getElementsByClassName("productImgBox");
+        //images[j].style.zIndex = 100 - j;
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.opacity = '0';
+            images[i].style.pointerEvents = 'none';
+        }
+        images[j].style.opacity = '1';
+        images[j].style.pointerEvents = 'auto';
+    }
+
+    var count = 1;
+    //setInterval(imageMove,10000);
+    function imageMove() {
+        if (count % 4 == 0) {
+            count = 0;
+        }
+        showImage(count);
+        count++;
+    }
+
+    function productPre() {
+
+        if (count == 0) {
+            count = 4;
+        }
+        count--;
+        showImage(count)
+    }
+
+    function productNext() {
+        imageMove();
+    }
+</script>
+</body>
+</html>

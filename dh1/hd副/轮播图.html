@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .banner {
+            position: relative;
+        }
+
+        .banner div {
+            position: absolute;
+            height: 500px;
+            width: 500px;
+            top: 0px;
+            left: 0px;
+            transition: all 1s linear;
+        }
+
+        .banner div:nth-child(1) {
+            background-color: red;
+        }
+
+        .banner div:nth-child(2) {
+            background-color: blue;
+        }
+
+        .banner div:nth-child(3) {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div style="opacity: 1;"></div>
+        <div style="opacity: 0;"></div>
+        <div style="opacity: 0;"></div>
+    </div>
+
+    <script src="jquery-1.11.3.js"></script>
+<script>
+//    var parent = document.getElementsByClassName("banner")[0];
+//    var divList = parent.getElementsByTagName("div");
+//    var now = 0;//计数器
+//
+//    var timer = setInterval(autoPlay,1000);
+//
+//    function autoPlay(){
+//        now++;
+//        if(now>divList.length-1) {
+//            now = 0;
+//        }
+//
+//        for(var i=0;i<divList.length;i++) {
+//            divList[i].style.opacity = "0";
+//        }
+//
+//        divList[now].style.opacity = "1";
+//    }
+
+
+    var divList = $(".banner div");//获取数组
+    var now = 0;//计数器
+
+    var timer = setInterval(autoplay,3000);
+
+    $(".banner").mouseenter(function () {
+        clearInterval(timer);
+    })
+
+    $(".banner").mouseleave(function () {
+        var timer = setInterval(autoplay,3000);
+    })
+
+    function autoplay() {
+        now++;
+        if(now > divList.length-1) {
+            now = 0;
+        }
+
+        divList.each(function (ele,i) {
+            $(this).css("opacity","0");
+        })
+
+        $(divList[now]).css("opacity","1");//设置当前轮播图
+    }
+
+</script>
+</body>
+</html>

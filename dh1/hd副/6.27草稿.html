@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>鼠标经过时，<a href='sitejs-16691-1.html' target='_blank'><u>图片滚动</u></a>停止效果</title>
+
+<style type="text/css">
+    <!--
+    #www_jb51_net {
+        background: #FFF;
+        overflow:hidden;
+        border: 1px dashed #CCC;
+        width: 325px;
+        height:245px;
+    }
+    #www_jb51_net img {
+        border: 3px solid #F2F2F2;
+    }
+    #indemo {
+        float: left;
+        width: 800%;
+    }
+    #demo1 {
+        float: left;
+    }
+    #demo2 {
+        float: left;
+    }
+    -->
+</style>
+</head>
+<body>
+向左滚动
+<div id="www_jb51_net">
+    <div id="indemo">
+        <div id="demo1">
+            <a href="#"><img src="images/m01.jpg" border="0" /></a>
+            <a href="#"><img src="images/m02.jpg" border="0" /></a>
+            <a href="#"><img src="images/m03.jpg" border="0" /></a>
+            <a href="#"><img src="images/m04.jpg" border="0" /></a>
+            <a href="#"><img src="images/m05.jpg" border="0" /></a>
+            <a href="#"><img src="images/m06.jpg" border="0" /></a>
+        </div>
+        <div id="demo2"></div>
+    </div>
+</div>
+<script>
+    <!--
+    var speed=10;
+    var tab=document.getElementById("www_jb51_net");
+    var tab1=document.getElementById("demo1");
+    var tab2=document.getElementById("demo2");
+    tab2.innerHTML=tab1.innerHTML;
+    function Marquee(){
+        if(tab2.offsetWidth-tab.scrollLeft<=0)
+            tab.scrollLeft-=tab1.offsetWidth
+        else{
+            tab.scrollLeft++;
+        }
+    }
+    var MyMar=setInterval(Marquee,speed);
+    tab.onmouseover=function() {clearInterval(MyMar)};
+    tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+    -->
+</script>
+</body>
+</html>
+</body>
+</html>
