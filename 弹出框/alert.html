@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .black{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1;
+            opacity: 0.8;
+        }
+        .white{
+            display: none;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 30%;
+            height: 30%;
+            border: 10px solid #b43225;
+            background-color: white;
+            z-index: 2;
+        }
+        span{
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .clo{
+            text-align: right;
+            height: 40px;"
+        }
+    </style>
+</head>
+<body>
+<input id="Button1" type="button" value="点击弹" onclick="Show()"/>
+<div id="fade" class="black">
+</div>
+<div id="myDiv" class="white">
+    <div  class="clo">
+        <span onclick="Close()">关闭</span>
+    </div>
+    还有10秒即将爆炸，迅速离开！
+</div>
+<script>
+    var mydiv=document.getElementById('myDiv');
+    var myfade=document.getElementById('fade');
+    //弹出
+    function Show() {
+        mydiv.style.display = 'block';
+        myfade.style.display = 'block';
+    };
+    //关闭
+    function Close() {
+        mydiv.style.display = 'none';
+        myfade.style.display = 'none';
+    }
+</script>
+</body>
+</html>

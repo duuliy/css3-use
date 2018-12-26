@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*reset start*/
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /*reset end*/
+        .imgBox {
+            position: relative;
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .imgBox img {
+            width: 600px;
+            font-size: 0;
+
+            top: 0;
+            left: 0;
+            height: 337px;
+        }
+
+        #originalImg {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #modifiedImg {
+            pointer-events: none;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*transition: all .5s linear;*/
+        }
+
+        .aa {
+            width: 0;
+        }
+
+        .bb {
+            width: 300px;
+        }
+
+        #btn {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            top: 150px;
+            left: 276px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        #mask {
+            width: 600px;
+            /*height: 1000px;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 337px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="imgBox">
+    <div id="originalImg">
+        <img src="img/img-original.jpg">
+    </div>
+    <div id="modifiedImg" style="width:300px">
+        <img src="img/img-modified.jpg">
+    </div>
+    <div id="btn" onmousedown="addMove()"></div>
+    <div id="mask" onmouseup="removeMmove()"></div>
+</div>
+<script>
+    function addMove() {
+        var btn = document.getElementById("btn");
+        var mask = document.getElementById("mask");
+        var modifiedImg = document.getElementById("modifiedImg");
+        var modifiedImgWidth = parseInt(modifiedImg.style.width);
+        console.log("g"+ modifiedImgWidth);
+        btn.style.background="black";
+        mask.style.display = "block";
+        var myEvent = window.event || arguments[0];
+        var clickX = myEvent.clientX;
+        var btnClickX = clickX - btn.offsetLeft;
+        console.log("a"+ clickX);
+        console.log("b"+ btn.offsetLeft);
+        console.log("c"+ btnClickX);
+        mask.onmousemove = function () {
+//            document.body.style.cursor = "move";
+            var mMove = window.event || arguments[0];
+            var mMoveX = mMove.clientX;
+            var mMoveXNew = mMoveX - btnClickX;
+            btn.style.left = mMoveXNew + "px";
+            var moveShift = mMoveX - clickX;
+            console.log("d"+ mMoveX);
+            modifiedImg.style.width = moveShift + modifiedImgWidth + "px";
+//            console.log(mMoveX);
+//            if (mMoveX < 383 || mMoveX > 980) {
+//                console.log("1111111111");
+//                mask.onmousemove = null;
+//            }
+        };
+        mask.onmouseup = function () {
+            mask.onmousemove = null;
+            mask.style.display = "none";
+            btn.style.background="red";
+            document.body.style.cursor = "auto";
+            mask.onmouseout = function () {
+                mask.onmousemove = null;
+            }
+        }
+    }
+
+    function removeMmove() {
+        var btn = document.getElementById("btn");
+        btn.onmousemove = null;
+    }
+</script>
+</body>
+</html>
