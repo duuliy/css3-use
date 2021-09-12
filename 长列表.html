@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>content-visibility一行CSS可以代替虚拟滚动、上拉加载更多等多种长列表渲染优化方式</title>
+  <style type="text/css">
+    .card {
+      position: relative;
+      overflow: hidden;
+      transition-duration: 0.3s;
+      margin-bottom: 10px;
+      width: 200px;
+      height: 100px;
+      background-color: #ffaa00;
+      content-visibility: auto;
+    }
+
+    .card:before {
+      content: '';
+      position: absolute;
+      left: -665px;
+      top: -460px;
+      width: 300px;
+      height: 15px;
+      background-color: rgba(255, 255, 255, 0.5);
+      transform: rotate(-45deg);
+      animation: searchLights 2s ease-in 0s infinite;
+    }
+
+    @keyframes searchLights {
+      0% {}
+
+      75% {
+        left: -100px;
+        top: 0;
+      }
+
+      100% {
+        left: 120px;
+        top: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    //     content-visibility属性有三个可选值:
+    // visible: 默认值。对布局和呈现不会产生什么影响。
+    // hidden: 元素跳过其内容的呈现。用户代理功能（例如，在页面中查找，按Tab键顺序导航等）不可访问已跳过的内容，也不能选择或聚焦。类似于对其内容设置了display: none属性。
+    // auto: 对于用户可见区域的元素，浏览器会正常渲染其内容；对于不可见区域的元素，浏览器会暂时跳过其内容的呈现，等到其处于用户可见区域时，浏览器在渲染其内容。
+    // 兼容性只有chrome85及以上
+    // 如果有图片则需要给图片设置高度：contains-intrinsic-size：312px; 否则导致滚动条不协调问题
+    const wrap = document.querySelector('body')
+    let contCard
+    for (let i = 0; i < 500; i++) {
+      contCard += '<div class="card"></div>'
+    }
+    wrap.innerHTML = contCard
+  </script>
+</body>
+
+</html>
