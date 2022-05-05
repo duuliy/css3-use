@@ -2,87 +2,197 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #container {
-            display: grid;
-            /* 列宽 3个代表三列*/
-            grid-template-columns: 100px 100px 100px;
-            /* 行高 每一行的高度*/
-            grid-template-rows: 100px 100px 100px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #container {
+      border: 1px solid red;
+      display: grid;
+      /* 列宽 3个代表三列,方括号代表网格线的的名字方便以后引用*/
+      grid-template-columns: [c1] 100px [c2] 100px [c3] 100px [c4];
+      /* grid-template-columns: 20% 30% 50%; */
 
-            /* grid-template-columns: repeat(3, 33.33%); */
-            /* 行间距 */
-            grid-row-gap: 20px;
-            /* 列间距 */
-            grid-column-gap: 20px;
-            /* 属性用于定义区域。 */
-            grid-template-areas: 'a b c'
-                'd e f'
-                'g h i';
-                /* "先行后列" */
-            /* grid-auto-flow: column; */
-        }
+      /* 网格布局提供了fr关键字（fraction 的缩写，意为"片段"）。如果两列的宽度分别为1fr和2fr，就表示后者是前者的两倍 */
+      /* grid-template-columns: 1fr 2fr 2fr; */
 
-        .item {
-            font-size: 4em;
-            text-align: center;
-            border: 1px solid #e5e4e9;
-        }
+      /* 长度范围,最小值和最大值。 */
+      /* grid-template-columns: 1fr 1fr minmax(100px, 1fr); */
 
-        .item-1 {
-            background-color: #ef342a;
-        }
+      /* 行高 每一行的高度*/
+      grid-template-rows: 100px 100px 100px;
 
-        .item-2 {
-            background-color: #f68f26;
-        }
+      /* 避免数值多了重复写入 */
+      /* grid-template-columns: repeat(3, 33.33%); */
 
-        .item-3 {
-            background-color: #4ba946;
-        }
+      /* 行间距 */
+      grid-row-gap: 20px;
+      /* 列间距 */
+      grid-column-gap: 20px;
+      /* 属性用于定义区域。 */
+      grid-template-areas: 'a b c'
+        'd e f'
+        'g h i';
 
-        .item-4 {
-            background-color: #0376c2;
-        }
+      /* "先行后列" */
+      /* grid-auto-flow: column; */
 
-        .item-5 {
-            background-color: #c077af;
-        }
+      /* 剩余块自动添置上去 */
+      /* grid-auto-flow: row dense; */
 
-        .item-6 {
-            background-color: #f8d29d;
-        }
+      /* 自动填充：单元格的大小是固定的，但是容器的大小不确定 */
+      /* grid-template-columns: repeat(auto-fill, 200px); */
 
-        .item-7 {
-            background-color: #b5a87f;
-        }
+      /* 设置单元格内容的水平和垂直位置 */
+      /* justify-items: center;
+            align-items: center; */
 
-        .item-8 {
-            background-color: #d0e4a9;
-        }
-    </style>
+      /* 水平垂直居中 */
+      /* justify-content: center; */
+      /* align-content: center; */
+
+      /* 单独item设置了位置grid-row-start等，才会其作用 */
+      /* grid-auto-rows: 50px;
+            grid-auto-columns: 50px; */
+    }
+
+    .item {
+      /* font-size: 4em; */
+      text-align: center;
+      /* border: 1px solid #e5e4e9; */
+      border: 1px solid blue;
+    }
+
+    .item-1 {
+      background-color: #ef342a;
+    }
+
+    .item-2 {
+      background-color: #f68f26;
+      /* grid-column-start:2;
+            grid-column-end: 3;  */
+    }
+
+    .item-3 {
+      background-color: #4ba946;
+    }
+
+    .item-4 {
+      background-color: #0376c2;
+    }
+
+    .item-5 {
+      background-color: #c077af;
+    }
+
+    .item-6 {
+      background-color: #f8d29d;
+    }
+
+    .item-7 {
+      background-color: #b5a87f;
+    }
+
+    .item-8 {
+      background-color: #d0e4a9;
+
+      /* 跟flex一样 */
+      justify-self: start;
+      /* align-self: start; */
+    }
+
+    .item-9 {
+      /* grid-column-start属性：左边框所在的垂直网格线
+      grid-column-end属性：右边框所在的垂直网格线
+      grid-row-start属性：上边框所在的水平网格线
+      grid-row-end属性：下边框所在的水平网格线 */
+      /* grid-column-start: span 2 跨域2个网格*/
+      grid-column-start: 3;
+      grid-row-start: 4;
+    }
+
+    /* 通过grid做响应式样式1 */
+    .container2 {
+      display: grid;
+      grid-template-columns: 100px 300px;
+      grid-template-rows: 50px 50px 50px;
+      grid-auto-rows: 50px;
+      margin-top: 60px;
+      grid-template-areas: 'a b'
+        'c d'
+    }
+
+    .itemGroup {
+      border: 1px solid red;
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 300px 300px;
+      grid-template-rows: 50px 50px;
+    }
+
+    .item-11 {
+      grid-row-start: span 2;
+    }
+
+    .item-22 {
+      border: 1px solid green;
+    }
+
+    .item-33 {
+      border: 1px solid green;
+      /* 把当前item放置在某个位置 */
+      /* grid-area: d; */
+    }
+
+    /* 通过grid做响应式样式2 */
+    .item-111 {
+      /* grid-row-start: span 2; */
+    }
+
+    .item-222 {
+      /* grid-row-start: 2;
+          grid-column-start: 2; */
+      border: 1px solid green;
+    }
+
+    .item-333 {
+      border: 1px solid green;
+      /* 把当前item放置在某个位置 */
+      /* grid-area: d; */
+      grid-column-start: span 2;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div id="container">
-        <div class="item item-1">1</div>
-        <div class="item item-2">2</div>
-        <div class="item item-3">3</div>
-        <div class="item item-4">4</div>
-        <div class="item item-5">5</div>
-        <div class="item item-6">6</div>
-        <div class="item item-7">7</div>
-        <div class="item item-8">8</div>
-        <div class="item item-9">9</div>
-    </div>
-    <script>
+  <div id="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
 
-    </script>
+  <div class="container2">
+    <div class="item item-11">1</div>
+    <div class="item-22">2</div>
+    <div class="item-33">3</div>
+  </div>
+
+  <div class="container2">
+    <div class="item item-111">1</div>
+    <div class="item-222">2</div>
+    <div class="item-333">3</div>
+  </div>
+  <script>
+
+  </script>
 </body>
 
 </html>
